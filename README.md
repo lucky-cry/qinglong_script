@@ -38,7 +38,7 @@ rsa
 
 点击青龙面板的订阅管理——>创建订阅
 
-直接在名称这输入：`ql repo https://github.com/HeiDaotu/WFRobertQL.git "" "initialize|notify" "initialize" "main"`，就会自动输入到其他的空栏。
+直接在名称这输入：`ql repo https://github.com/lucky-cry/qinglong_script.git "" "initialize|notify" "initialize" "main"`，就会自动输入到其他的空栏。
 
 - **名称：** 随便写，自己看得懂就行，或者直接写`WFRobert脚本库`
 - **类型：** 公开仓库
