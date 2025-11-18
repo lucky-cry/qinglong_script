@@ -26,14 +26,14 @@ class SteamTools(object):
         
         try:
             response = requests.get(
-                'https://bbs.steamtools.net/forum.php?mod=viewthread&tid=8741'，
+                'https://bbs.steamtools.net/forum.php?mod=viewthread&tid=8741',
                 headers=headers,
-                timeout=15，
+                timeout=15,
                 verify=False
             )
             
             if response.status_code != 200:
-                return False， f"页面访问失败，状态码: {response.status_code}"
+                return False, f"页面访问失败，状态码: {response.status_code}"
                 
             # 提取formhash
             searchObj = re.search(r'<input type="hidden" name="formhash" value="(.+?)" />', response.text)
@@ -49,7 +49,7 @@ class SteamTools(object):
             return True, f"Cookie验证成功，formhash: {self.formhash}"
             
         except Exception as e:
-            return False， f"检查Cookie时出错: {str(e)}"
+            return False, f"检查Cookie时出错: {str(e)}"
 
     def do_signin(self):
         """执行签到"""
@@ -62,7 +62,7 @@ class SteamTools(object):
         
         data = {
             'formhash': self.formhash,
-            'signsubmit': 'yes'，
+            'signsubmit': 'yes',
             'handlekey': 'signin',
             'emotid': '3',
             'referer': 'https://bbs.steamtools.net/forum.php?mod=viewthread&tid=8741',
@@ -74,7 +74,7 @@ class SteamTools(object):
                 'https://bbs.steamtools.net/plugin.php?id=dc_signin:sign&inajax=1',
                 headers=headers,
                 data=data,
-                timeout=30，
+                timeout=30,
                 verify=False,
                 impersonate="chrome110"
             )
