@@ -24,7 +24,7 @@ import requests
 import logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'，
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.StreamHandler(sys.stdout)
     ]
@@ -46,21 +46,21 @@ class KurobbsClient:
         # 设备信息 - 随机化以防止检测
         devices = [
             {
-                "model": "2211133C"，
-                "devcode": "2fba3859fe9bfe9099f2696b8648c2c6"，
-                "version": "1.0.9"，
+                "model": "2211133C",
+                "devcode": "2fba3859fe9bfe9099f2696b8648c2c6",
+                "version": "1.0.9",
                 "versioncode": "1090"
             },
             {
-                "model": "23013RK75C"，
-                "devcode": "3a8b7c6d5e4f3a2b1c9d8e7f6a5b4c3d"，
-                "version": "1.1.0"， 
+                "model": "23013RK75C",
+                "devcode": "3a8b7c6d5e4f3a2b1c9d8e7f6a5b4c3d",
+                "version": "1.1.0", 
                 "versioncode": "1100"
             },
             {
-                "model": "22081212C"，
-                "devcode": "4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0"，
-                "version": "1.0.8"，
+                "model": "22081212C",
+                "devcode": "4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0",
+                "version": "1.0.8",
                 "versioncode": "1080"
             }
         ]
@@ -68,19 +68,19 @@ class KurobbsClient:
         device = random.choice(devices)
         
         self.headers = {
-            "osversion": "Android"，
+            "osversion": "Android",
             "devcode": device["devcode"],
-            "countrycode": "CN"，
-            "ip": f"10.0.{random.randint(1, 255)}.{random.randint(1, 255)}"，
+            "countrycode": "CN",
+            "ip": f"10.0.{random.randint(1, 255)}.{random.randint(1, 255)}",
             "model": device["model"],
-            "source": "android"，
-            "lang": "zh-Hans"，
+            "source": "android",
+            "lang": "zh-Hans",
             "version": device["version"],
             "versioncode": device["versioncode"],
             "token": self.token,
-            "content-type": "application/x-www-form-urlencoded; charset=utf-8"，
-            "accept-encoding": "gzip"，
-            "user-agent": f"okhttp/3.10.0 {device['model']}"，
+            "content-type": "application/x-www-form-urlencoded; charset=utf-8",
+            "accept-encoding": "gzip",
+            "user-agent": f"okhttp/3.10.0 {device['model']}",
         }
         
         self.session.headers.update(self.headers)
